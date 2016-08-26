@@ -13,5 +13,4 @@ api.add_resource(QuestionsIds, '/questions/<test_id>/direction/<direction>')
 api.add_resource(ControlQuestion, '/control/<test_id>/direction/<direction_id>')
 api.add_resource(Create, '/create/<method>')
 api.add_resource(DirectionAnswer, '/dir/<id>')
-api.add_resource(Answers , '/delete/answer')
-
+api.add_resource(Answers, '/delete/answer')

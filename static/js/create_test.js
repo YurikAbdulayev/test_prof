@@ -5,9 +5,9 @@ function createTest() {
     var name = "business_c_token";
     var token=getCookie(name);
     // alert(token);
-    var json = '{"token":"'+ token +'", "body":"'+ document.getElementById("c_test_name").value +'"}';
+    var json = '{"token":"'+ token +'", "name":"'+ document.getElementById("c_test_name").value +'"}';
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', getUrl() + "api/v1.0/create/test" , false);
+    xhr.open('POST', getUrl() + "api/v1.0/tests" , false);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     // send the collected data as JSON
     xhr.send(JSON.stringify(json));

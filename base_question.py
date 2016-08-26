@@ -3,8 +3,8 @@ from service import (question_to_json,
                      questions_to_json,
                      direction_to_json,
                      questions_id_list,
-    # control_question_to_json,
                      create,
+                     create_t,
                      delete_q, delete_t, delete_a, delete_d,
                      get_t,
                      direction_a_to_json,
@@ -95,6 +95,9 @@ class Tests(Resource):
         j = request.json
         delete_t(j)
 
+    def post(self):
+        j = request.json
+        create_t(j)
 
 class DirectionAnswer(Resource):
     def get(self, id):

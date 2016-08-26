@@ -84,13 +84,16 @@ def create_question_service(j):
         create_question(obj)
 
 
+def create_t(j):
+    obj = json.loads(j)
+    if equals(obj["token"]):
+        create_test(obj["name"])
+
+
 def create(method_name, j):
     obj = json.loads(j)
     if equals(obj["token"]):
-        if method_name == "test":
-            create_test(obj['body'])
-            return {"response": "ok"}
-        elif method_name == "direction":
+        if method_name == "direction":
             create_direction(obj['body'])
             return {"response": "ok"}
 
