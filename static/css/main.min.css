@@ -4,7 +4,6 @@
 }
 
 body {
-    /*background: #f74646;*/
     background: #fff;
     color: #333;
     font-family: Open Sans, serif
@@ -44,6 +43,7 @@ input:focus, textarea:focus {
 #content .head-text {
     font-size: 150%;
     margin-top: 20px
+    border-bottom: 1px solid #a3a3a3;
 }
 
 #content .test {
@@ -320,7 +320,7 @@ input:focus, textarea:focus {
 }
 
 .image_title {
-    width: 40%;
+    width: 35%;
     margin-top: 10px
 }
 
