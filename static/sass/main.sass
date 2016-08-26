@@ -1,0 +1,347 @@
+*
+	margin: 0
+	padding: 0
+
+body
+	background: #fff
+	color: #333333
+	font-family: 'Open Sans', serif
+
+a
+	text-decoration: none
+
+button:focus, input[type="radio"]:focus, a:focus
+	outline: none
+
+input[type="radio"]:focus
+	-moz-outline-offset: 0 !important
+
+button::-moz-focus-inner
+	border: 0
+
+ul
+	list-style: none
+
+input:focus,
+textarea:focus
+	border: 1px solid #529DFF !important
+
+#content
+	width: 80%
+	margin: auto
+	text-align: center
+	padding-bottom: 50px
+
+	.head-text
+		font-size: 150%
+		margin-top: 40px
+
+	.test
+		margin-top: 20px
+
+		input[type=radio]
+			vertical-align: middle
+			width: 13px
+			height: 13px
+			margin-right: 20px
+			margin-top: 5px
+
+		a
+			padding: 20px 40px
+			margin-right: 10px
+
+	.image
+		margin: 30px 0
+		width: 100%
+
+	p
+		font-size: 100%		
+
+	.result
+		text-align: justify
+		padding: 30px 0 0
+
+	.answer
+		text-align: left
+		padding: 10px 5px 0
+
+		label
+			vertical-align: middle
+
+			&:hover
+				cursor: pointer
+
+.test .button,
+.login .button,
+.new-test .button,
+.add-category .button
+	margin-top: 50px
+	font-size: 24px
+	border-radius: 50px
+	border: 1px solid #acacac
+	background: #fff
+	color: #acacac
+	margin-bottom: 50px
+
+.test button,
+.login button,
+.new-test button,
+.add-category button
+	padding: 23px 25px
+	outline: none
+
+#add-category button
+	float: right
+	outline: none
+
+.button-category
+	margin-top: 150px !important
+	margin-left: 40%
+
+.button:hover,
+#admin-content h1 a:hover
+	background: #f04933
+	color: #fff
+	border: 1px solid #f04933
+
+.button
+	&:hover
+		cursor: pointer
+	&:focus
+		outline: none
+
+.login
+	width: 100%
+	min-height: 300px
+	border: 1px solid #acacac
+	margin: 250px auto
+
+	input
+		width: 80%
+
+.login input,
+.new-test input,
+.add-category input,
+.add-category textarea
+	padding: 10px
+	border-radius: 10px
+	outline: none
+	box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset
+	border: 1px solid #aaa
+	margin-top: 20px
+
+.add-category input,
+.add-category textarea
+	width: 95%
+
+#admin-content
+	width: 80%
+	margin: auto
+	text-align: center
+
+	h1
+		margin-top: 100px
+		margin-bottom: 50px
+
+		a
+			margin-top: 50px
+			font-size: 18px
+			border-radius: 50px
+			border: 1px solid #acacac
+			background: #fff
+			color: #acacac
+			padding: 10px 20px
+			margin-left: 20px
+
+	p
+		margin-top: 20px
+
+		a
+			color: #333333
+			font-size: 24px
+
+			&:hover
+				text-decoration: underline
+
+	.font-all-category a
+		font-size: 16px !important
+
+.update
+	display: inline-block
+	width: 25%
+	float: right
+	text-align: right
+	color: #acacac !important
+
+	&:hover
+		color: #f04933 !important
+
+.new-test
+	a:hover
+		color: #f04933 !important
+
+	input
+		width: 45%
+
+	select
+		width: 100px
+		padding: 5px
+		outline: none
+		border-radius: 5px
+		margin: 0 20px
+
+	button
+		margin: 0 10px
+		outline: none
+
+.input-answer
+	margin-left: 60px
+	width: 40% !important
+
+.rout-to-main
+	color: #acacac
+
+	&:hover
+		text-decoration: underline
+
+#listTest
+	margin-top: 30px
+	font-size: 15px
+	text-align: left
+
+	p
+		padding: 5px 0
+
+	a
+		color: #1563A9
+		text-decoration: underline
+
+		&:hover
+			color: #f04933
+
+.header
+	width: 80%
+	margin: auto
+	border-bottom: 1px solid #666666
+
+.finish-test button
+	margin-left: 10px
+	font-size: 18px
+	color: #666666
+	border: none
+	background: #fff
+	outline: none
+
+	&:hover
+		cursor: pointer
+		text-decoration: underline
+		outline: none
+
+#number_question_in_list
+	font-size: 18px
+	float: left
+	margin-top: 15px
+	color: #666666
+
+.delete
+	font-size: 18px !important
+
+.category
+	width: 100%
+	overflow: hidden
+
+	.all-category
+		display: inline-block
+		width: 30%
+		max-height: 400px
+		float: left
+		text-align: left
+		overflow: auto
+		padding-right: 25px
+
+		.delete-category
+			float: right
+
+		a:hover
+			color: #f04933 !important
+
+	.new-category
+		display: inline-block
+		width: 50%
+		float: right
+		text-align: left
+
+.image_title
+	width: 40%
+	margin-top: 10px
+
+.view-all-test
+	width: 60%
+	overflow: hidden
+	margin: auto
+
+.name-test
+	display: inline-block
+	width: 65%
+	float: left
+	text-align: left
+	font-size: 24px
+
+.all-questions
+	text-align: left
+
+	p
+		margin-top: 5px !important
+
+		a
+			font-size: 20px !important
+
+.new-question-head
+	margin-top: 40px !important
+	margin-bottom: 20px !important
+
+@media(max-width:519px)
+	.test .button,
+	.login .button,
+	.new-test .button
+		margin-bottom: 10px
+		margin-top: 30px
+
+@media(min-width:500px)
+	.login
+		width: 400px
+
+	.test button,
+	.login button,
+	.new-test button
+		padding: 23px 40px
+
+@media(min-width:800px)
+	#content
+		width: 800px
+
+@media(max-width:1100px)
+	.all-category, 
+	.new-category
+		width: 100% !important
+		display: block !important
+
+@media(min-width:1000px)
+	#content 
+
+		.head-text
+			height: 100px
+			font-size: 240% !important
+
+		.question-head
+			margin-bottom: 70px
+
+		p
+			font-size: 150%
+
+		.test
+			margin-top: 50px
+		
+			input[type=radio]
+				height: 30px
+				width: 30px

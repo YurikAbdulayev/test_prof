@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Нове запитання</title>
+    <link rel="stylesheet" href="../static/css/main.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
+    <!--<script src="http://code.jquery.com/jquery-1.11.0.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/create_direction.js"></script>
+</head>
+<body>
+<div id="admin-content">
+    <a href="/login" class="rout-to-main">Головна</a>
+    <h1>Категорії:</h1>
+    <div class="category">
+        <div id="all_category" class="all-category">
+        </div>
+        <div class="new-category">
+            <form action="/category" class="add-category">
+                <div id="add-category">
+                    <p><input id="name_c" type="text" placeholder="Назва категорії"></p>
+                    <p><textarea name="" id="text_a_name_c" cols="30" placeholder="Текст який буде вказано в кінці тесту" rows="10"></textarea></p>
+                    <button class="button">Додати зображення</button>
+                    <button class="button" onclick="createDirection()">Створити</button>
+                </div>
+                <div id="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../static/js/url.js"></script>
+<script src="../static/js/create_test.js"></script>
+<script>loadCategories()</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Нове запитання</title>
+    <link rel="stylesheet" href="../static/css/main.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/url.js"></script>
+    <script src="../static/js/create_test.js"></script>
+    <script src="../static/js/admin.js"></script>
+    <script src="../static/js/create_questions.js"></script>
+</head>
+<body>
+<div id="admin-content">
+    <a href="/login" class="rout-to-main">Головна</a>|<a href='/login' class="delete-test"
+                                                         onclick='deleteDialog()'>Видалити
+    тест</a>
+    <h1>Всі запитання:</h1>
+    <div id="all_category" class="all-questions">
+    </div>
+    <h1 class="new-question-head">Створення нового запитання:</h1>
+    <label for="is_control">Контрольне питання</label>
+    <input type="checkbox" title="контрольне запитання" id="is_control">
+    <div id="new-test" class="new-test">
+        <div id="questions">
+            <div id="new_question">
+                <div id="c_new_answers" class="answers">
+                    <p>
+                        <input type="text" id="i_new_question" placeholder="Назва запитання">
+                        <label for="new_question_select">Ключ-</label>
+                        <select name="" id="new_question_select"></select>
+                        <a href="" class="delete">Видалити</a>
+                    </p>
+                    <p>
+                        <input type="text" id="i_new_answer_1" placeholder="Відповідь" class="input-answer">
+                        <label for="new_answer_1"> Ключ-</label>
+                        <select title="Ключ" name="" id="new_answer_1"></select>
+                        <a href="" class="delete">Видалити</a>
+                    </p>
+                    <p>
+                        <input type="text" id="i_new_answer_2" placeholder="Відповідь" class="input-answer">
+                        <label for="new_answer_2"> Ключ-</label>
+                        <select name="" id="new_answer_2"></select>
+                        <a href="" class="delete">Видалити</a>
+                    </p>
+
+                </div>
+                <button class="button" onclick="addAnswer()">Додати відповідь</button>
+            </div>
+        </div>
+        <div id="btn_update">
+            <a href="/update/{{t_id}}">
+                <button type="submit" class="button" onclick="createQuestion()">Створити питання</button>
+            </a>
+        </div>
+        <!--<button class="button" onclick="addQuestion()">Додати запитання</button>-->
+    </div>
+</div>
+<script>
+    loadCreateQuestions("{{t_id}}")
+</script>
+</body>
+</html>

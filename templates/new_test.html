@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Новий тест</title>
+	<link rel="stylesheet" href="../static/css/main.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../static/js/create_test.js"></script>
+	<script src="../static/js/url.js"></script>
+</head>
+<body>
+	<div id="admin-content">
+		<a href="/login" class="rout-to-main">Головна</a>
+		<h1>Створення нового тесту:</h1>
+		<form action="/login" class="new-test">
+			<p><input type="text" placeholder="Назва тесту" id="c_test_name"></p>
+			<button type="submit" onclick="createTest()" class="button">Створити</button>
+		</form>
+	</div>
+</body>
+</html>

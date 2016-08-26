@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Адміністративна панель</title>
+    <link rel="stylesheet" href="../static/css/main.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/url.js"></script>
+    <script src="../static/js/admin.js"></script>
+    <script src="../static/js/create_test.js"></script>
+</head>
+<body>
+<div id="admin-content">
+    <a href="/" class="rout-to-main">Повернутися до тестів</a>
+    <h1>Усі тести
+        <a href="/new_test">Додати тест</a>
+        <a href="/category">Додати категорію</a>
+        <a href="/logout">Вийти</a></h1>
+    <ul id="a_list_tests"></ul>
+    <ul id="how-create" style="margin-top: 5%">
+        <h1><a class="button" onclick="viewHowCreate()">Як створити тест ?</a></h1>
+    </ul>
+</div>
+<script>loadAdminTests()</script>
+</body>
+</html>
