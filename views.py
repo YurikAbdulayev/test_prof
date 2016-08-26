@@ -1,7 +1,7 @@
 from __init__ import app
 
 from base_question import Question, DirectionAnswer, \
-    Questions, Direction, QuestionsIds, ControlQuestion, Create, Tests, Answers
+    Questions, Direction, QuestionsIds, ControlQuestion, Tests, Answers
 from unicode_api import UnicodeApi
 
 api = UnicodeApi(app, prefix='/api/v1.0')
