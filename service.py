@@ -6,6 +6,7 @@ from test_crud import (create_test,
                        create_question,
                        delete_answer,
                        update_question,
+                       update_test,
                        delete_test)
 from test_crud import (get_tests)
 from admin import equals
@@ -143,3 +144,9 @@ def update_question_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         update_question(obj)
+
+
+def update_t(j):
+    obj = json.loads(j)
+    if equals(obj["token"]):
+        update_test(obj["id"], obj["name"])

@@ -73,6 +73,13 @@ def update_direction(obj):
     db.session.commit()
 
 
+def update_test(id, name):
+    test = Test.query.filter_by(id=id).first()
+    test.name_test = name
+    db.session.add(test)
+    db.session.commit()
+
+
 def get_question(id):
     question = Questions.query.filter_by(id=id).first()
     return question

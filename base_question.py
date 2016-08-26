@@ -99,6 +99,10 @@ class Tests(Resource):
         j = request.json
         create_t(j)
 
+    def put(self):
+        j = request.json
+
+
 class DirectionAnswer(Resource):
     def get(self, id):
         return direction_a_to_json(get_dir_answer(id))
