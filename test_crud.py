@@ -24,11 +24,11 @@ def create_answers(answer, id):
     db.session.commit()
 
 
-def create_direction(j):
-    direction = Directions(j["direction"])
+def create_direction(direction_name, body):
+    direction = Directions(direction_name)
     db.session.add(direction)
     db.session.flush()
-    direction_body = DirectionBody(direction.id, j["body"])
+    direction_body = DirectionBody(direction.id, body)
     db.session.add(direction_body)
     db.session.commit()
 
@@ -56,19 +56,19 @@ def update_answer(id, direction, body, question_id):
     db.session.commit()
 
 
-def update_direction(obj):
-    direction = Directions.query.filter_by(id=obj["id"]).first()
+def update_direction(id, direction_n, body):
+    direction = Directions.query.filter_by(id=id).first()
     if not direction:
-        direction = Directions(obj["direction"])
+        direction = Directions(direction_n)
     else:
-        direction.name_direction = obj["direction"]
+        direction.name_direction = direction_n
     db.session.add(direction)
     db.session.flush()
-    direction_body = DirectionBody.query.filter_by(id=obj["id"]).first()
+    direction_body = DirectionBody.query.filter_by(id=id).first()
     if not direction_body:
-        direction_body = DirectionBody(direction.id, obj["body"])
+        direction_body = DirectionBody(direction.id, body)
     else:
-        direction_body.answer_body = obj["body"]
+        direction_body.answer_body = body
     db.session.add(direction_body)
     db.session.commit()
 

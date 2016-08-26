@@ -1,16 +1,12 @@
 from flask_restful import Resource, request
-from service import (question_to_json,
-                     questions_to_json,
-                     direction_to_json,
+from service import (question_to_json, questions_to_json, direction_to_json,
                      questions_id_list,
-                     create,
-                     create_t,
-                     delete_q, delete_t, delete_a, delete_d,
-                     get_t,
+                     create_test_service, create_direction_service, create_question_service,
+                     delete_question_service, delete_test_service, delete_answer_service, delete_direction_service,
+                     get_test_service,
                      direction_a_to_json,
                      directions_to_json,
-                     create_question_service,
-                     update_question_service)
+                     update_question_service, update_direction_service, update_test_service)
 
 from test_crud import (get_question,
                        get_test,
@@ -29,13 +25,13 @@ class Question(Resource):
     def get(self, id):
         return {'question': question_to_json(get_question(id))}
 
-    def delete(self, id):
-        j = request.json
-        return delete_q(j)
-
     def post(self, id):
         j = request.json
         create_question_service(j)
+
+    def delete(self, id):
+        j = request.json
+        delete_question_service(j)
 
     def put(self, id):
         j = request.json
@@ -56,19 +52,15 @@ class Direction(Resource):
 
     def post(self, id):
         j = request.json
-        obj = json.loads(j)
-        if equals(obj['token']):
-            create_direction(obj)
+        create_direction_service(j)
 
     def delete(self, id):
         j = request.json
-        delete_d(j)
+        delete_direction_service(j)
 
     def put(self, id):
         j = request.json
-        obj = json.loads(j)
-        if equals(obj['token']):
-            update_direction(obj)
+        update_direction_service(j)
 
 
 class QuestionsIds(Resource):
@@ -81,26 +73,21 @@ class ControlQuestion(Resource):
         return question_to_json(get_control_question(test_id, direction_id))
 
 
-class Create(Resource):
-    def post(self, method):
-        j = request.json
-        return create(method, j)
-
-
 class Tests(Resource):
     def get(self):
-        return get_t()
+        return get_test_service()
 
     def delete(self):
         j = request.json
-        delete_t(j)
+        delete_test_service(j)
 
     def post(self):
         j = request.json
-        create_t(j)
+        create_test_service(j)
 
     def put(self):
         j = request.json
+        update_test_service(j)
 
 
 class DirectionAnswer(Resource):
@@ -111,4 +98,4 @@ class DirectionAnswer(Resource):
 class Answers(Resource):
     def delete(self):
         j = request.json
-        delete_a(j)
+        delete_answer_service(j)

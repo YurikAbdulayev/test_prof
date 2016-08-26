@@ -1,13 +1,8 @@
 import json
-from test_crud import (create_test,
-                       create_direction,
-                       delete_question,
-                       delete_direction,
-                       create_question,
-                       delete_answer,
-                       update_question,
-                       update_test,
-                       delete_test)
+from test_crud import (create_test, create_direction, create_question,
+                       delete_question, delete_direction, delete_answer, delete_test,
+                       update_question, update_test, update_direction
+                       )
 from test_crud import (get_tests)
 from admin import equals
 
@@ -85,45 +80,43 @@ def create_question_service(j):
         create_question(obj)
 
 
-def create_t(j):
+def create_test_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         create_test(obj["name"])
 
 
-def create(method_name, j):
+def create_direction_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
-        if method_name == "direction":
-            create_direction(obj['body'])
-            return {"response": "ok"}
+        create_direction(obj["direction"], obj["body"])
 
 
-def delete_q(j):
+def delete_question_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         delete_question(obj["id"])
 
 
-def delete_d(j):
+def delete_direction_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         delete_direction(int(obj["id"]))
 
 
-def delete_a(j):
+def delete_answer_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         delete_answer(obj["id"])
 
 
-def delete_t(j):
+def delete_test_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         delete_test(obj["id"])
 
 
-def get_t():
+def get_test_service():
     tests = get_tests()
     list_test = []
     for test in tests:
@@ -146,7 +139,13 @@ def update_question_service(j):
         update_question(obj)
 
 
-def update_t(j):
+def update_test_service(j):
     obj = json.loads(j)
     if equals(obj["token"]):
         update_test(obj["id"], obj["name"])
+
+
+def update_direction_service(j):
+    obj = json.loads(j)
+    if equals(obj['token']):
+        update_direction(obj["id"], obj["direction"], obj["body"])
