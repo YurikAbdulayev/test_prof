@@ -43,11 +43,10 @@ input:focus, textarea:focus {
 #content .head-text {
     font-size: 150%;
     margin-top: 20px;
-    border-top: 1px solid #a3a3a3;
 }
 
 #content .test {
-    margin-top: 20px
+    margin-top: 10px
 }
 
 #content .test input[type=radio] {
@@ -79,7 +78,7 @@ input:focus, textarea:focus {
 
 #content .answer {
     text-align: left;
-    padding: 10px 5px 0
+    padding: 10px 0px
 }
 
 #content .answer label {
