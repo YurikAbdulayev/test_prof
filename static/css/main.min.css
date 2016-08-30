@@ -93,9 +93,9 @@ input:focus, textarea:focus {
     margin-top: 50px;
     font-size: 24px;
     border-radius: 50px;
-    border: 1px solid #acacac;
-    background: #fff;
-    color: #acacac;
+    border: 1px solid #f04933;
+    background: #f04933;
+    color: #fff;
     /*margin-bottom: 50px*/
 }
 
@@ -256,9 +256,39 @@ input:focus, textarea:focus {
     color: #f04933
 }
 
+#tests-header{
+    width: 940px;
+    height: 80px;
+    margin: 0 auto;
+    border-bottom: 1px solid #666;
+}
+
+#logo {
+    width: 20%;
+    margin: 10px;
+    float: left
+}
+
+#info {
+    float: left;
+    margin-left: 350px;
+}
+
+#finish_test{
+    font-size: 16px;
+    float: left;
+    margin-top: 35px;
+    color: #666
+}
+
+#finish_test:hover{
+    text-decoration: underline ;
+    color: #1563A9;
+}
+
 .header {
     width: 80%;
-    margin: auto;
+    margin:0 auto;
     border-bottom: 1px solid #666
 }
 
@@ -278,9 +308,9 @@ input:focus, textarea:focus {
 }
 
 #number_question_in_list {
-    font-size: 18px;
+    font-size: 16px;
     float: left;
-    margin-top: 15px;
+    margin-top: 35px;
     color: #666
 }
 

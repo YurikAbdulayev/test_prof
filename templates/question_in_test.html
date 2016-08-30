@@ -13,13 +13,13 @@
     <script src="../static/js/url.js"></script>
 </head>
 <body>
-<div class="header">
-    <h1 id="number_question_in_list"></h1>
-    <a href="/" class="finish-test">
-        <h1>
-            <button onclick="deleteStorage()">Закінчити тест</button>
-        </h1>
-    </a>
+<div id="tests-header">
+    <img src='../static/img/logo_b.png' id='logo'>
+    <div id="info">
+        <div id="number_question_in_list"></div>
+        <a href="/" id="finish_test" onclick="deleteStorage()">Закінчити тест</a>
+    </div>
+
 </div>
 <div id="content">
     <h1 class="head-text question-head">
@@ -32,3 +32,26 @@
 </script>
 </body>
 </html>
+
+{#<div id="tests-header">#}
+{#    <img src='../static/img/logo_b.png' id='logo'>#}
+{#    <div id="info">#}
+{#        <div id="number_question_in_list"></div>#}
+{#        <a href="/" class="finish-test">#}
+{#            <h1>#}
+{#                <button onclick="deleteStorage()">Закінчити тест</button>#}
+{#            </h1>#}
+{#        </a>#}
+{#    </div>#}
+{##}
+{#</div>#}
+
+{#<div class="header">#}
+{#    <img src='../static/img/logo_b.png' id='logo'>#}
+{#    <h1 id="number_question_in_list"></h1>#}
+{#    <a href="/" class="finish-test">#}
+{#        <h1>#}
+{#            <button onclick="deleteStorage()">Закінчити тест</button>#}
+{#        </h1>#}
+{#    </a>#}
+{#</div>#}
