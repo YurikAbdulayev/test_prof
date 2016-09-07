@@ -92,7 +92,7 @@ def get_control_question(test_id, direction_id):
 
 def get_direction(id):
     direction = Directions.query.filter_by(id=id).first()
-    return direction
+    return direction.name_direction
 
 
 def get_directions():

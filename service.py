@@ -3,7 +3,7 @@ from test_crud import (create_test, create_direction, create_question,
                        delete_question, delete_direction, delete_answer, delete_test,
                        update_question, update_test, update_direction
                        )
-from test_crud import (get_tests)
+from test_crud import (get_tests, get_direction)
 from admin import equals
 
 
@@ -27,6 +27,7 @@ def question_to_json(question):
         'id': question.id,
         'body': question.question,
         'direction': question.direction_id,
+        'direction_name': get_direction(question.direction_id),
         'test_id': question.test_id,
         'answers': answers_to_json(question),
         'is_control': question.is_control
@@ -44,7 +45,7 @@ def questions_to_json(test):
 
 
 def direction_to_json(direction):
-    return {'direction': direction.name_direction}
+    return {'direction': direction}
 
 
 def directions_to_json(directions):

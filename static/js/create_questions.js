@@ -11,7 +11,7 @@ var categoryResponse = "";
 function loadCreateQuestions(test_id) {
     id = test_id;
     list_dir = loadCategory(0);
-    loadQuestions();
+    // loadQuestions();
     setId("new_question_select", list_dir);
     setId("new_answer_1", list_dir);
     setId("new_answer_2", list_dir);
@@ -160,7 +160,7 @@ function loadQuestions() {
             all_q = json;
             for (i = 0; i < json.length; i++) {
                 out += "<p><a onclick='loadToUpdate(" + i + ")'>" + (i + 1) + ") " + json[i]["body"] + " категорія :" +
-                    json[i]["direction"] + "</a></p>"
+                    json[i]["direction_name"] + "</a></p>"
             }
         }
     };
