@@ -195,7 +195,8 @@ function parseQuestion(result, questionId, storage) {
     ans = obj["question"];
     outAsnwers += "<div id='myForm'>";
     for (i = 0; i < ans["answers"].length; i++) {
-        outAsnwers += "<p class='answer'><input class='radio' type='radio' id='radio" + ans["answers"][i]["id"] + "' " +
+        outAsnwers += "<p class='answer'>" +
+            "<input class='radio' type='radio' id='radio" + ans["answers"][i]["id"] + "' " +
             "name='answer' value='" + ans["answers"][i]["direction"] + "'>" +
             "<label for='radio" + ans["answers"][i]["id"] + "'" +
             ">" + ans["answers"][i]["body"] + "</label></p>"
@@ -264,26 +265,26 @@ function finish() {
     var d = localStorage.getItem("dir_answ");
     document.getElementById("number_question_in_list").innerHTML =
         "<a onclick='deleteStorage()' href='/test" + id + "'>Почати спочатку</a> |";
-    var faculty;
+    var answer;
     d = JSON.parse(d);
 
     var url = getUrl() + "api/v1.0/direction/" + keyz["c"][0];
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            faculty = JSON.parse(xmlhttp.responseText)
+            answer = JSON.parse(xmlhttp.responseText)
         }
     };
     xmlhttp.open("GET", url, false);
     xmlhttp.send();
 
-    // it`s very bad
     var out = "";
     if (id == 1) {
-        out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям \" " + faculty["direction"] + "\" </h1>" +
+        out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям \"" +
+            + answer["direction"] + "\" а саме : </h1>" +
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
     } else {
-        out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
+        out = "<h1 class='head-text'>" + answer["direction"] + "</h1>" +
             "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
     }
