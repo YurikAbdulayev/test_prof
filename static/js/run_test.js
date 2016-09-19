@@ -265,13 +265,13 @@ function finish() {
     var d = localStorage.getItem("dir_answ");
     document.getElementById("number_question_in_list").innerHTML =
         "<a onclick='deleteStorage()' href='/test" + id + "'>Почати спочатку</a> |";
-    var answer;
+    var faculty;
     d = JSON.parse(d);
 
     var url = getUrl() + "api/v1.0/direction/" + keyz["c"][0];
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            answer = JSON.parse(xmlhttp.responseText)
+            faculty = JSON.parse(xmlhttp.responseText)
         }
     };
     xmlhttp.open("GET", url, false);
@@ -280,11 +280,11 @@ function finish() {
     var out = "";
     if (id == 1) {
         out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям \"" +
-            + answer["direction"] + "\" а саме : </h1>" +
+            faculty["direction"] + "\" а саме: </h1>" +
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
     } else {
-        out = "<h1 class='head-text'>" + answer["direction"] + "</h1>" +
+        out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
             "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
     }
