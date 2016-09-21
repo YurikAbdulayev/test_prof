@@ -278,18 +278,9 @@ function finish() {
     xmlhttp.send();
 
     var out = "";
-    if (id == 1) {
-        out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям \"" +
-            faculty["direction"] + "\" а саме: </h1>" +
-            "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
-            "<p class='result'>";
-    } else {
-        out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
-            "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
-            "<p class='result'>";
-    }
+    var aboutYour = "";
     if (keyz["c"][1] != null) {
-        var aboutYour = "";
+
         url = getUrl() + "api/v1.0/dir/" + keyz["c"][1];
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -298,7 +289,23 @@ function finish() {
         };
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
-        out += aboutYour["body"];
+
+    }
+    if (id == 1) {
+        out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям <b>«" +
+            aboutYour["full_name"] + "»!</b></h1>" +
+            "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
+            "<p class='result'>";
+        if (!aboutYour["body"].empty()) {
+            out += aboutYour["body"];
+        }
+    } else {
+        out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
+            "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
+            "<p class='result'>";
+        if (!aboutYour["body"].empty()) {
+            out += aboutYour["body"];
+        }
     }
     document.getElementById("content").innerHTML = out;
     deleteStorage()

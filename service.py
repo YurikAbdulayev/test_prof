@@ -130,7 +130,8 @@ def get_test_service():
 def direction_a_to_json(direction_answer):
     return {
         'id': direction_answer.id,
-        'body': direction_answer.answer_body
+        'body': direction_answer.answer_body,
+        'full_name': direction_answer.full_name
     }
 
 
