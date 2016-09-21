@@ -48,6 +48,7 @@ class Directions(db.Model):
 class DirectionBody(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     answer_body = db.Column(db.String())
+    full_name = db.Column(db.String)
 
     def __init__(self, new_id, body):
         self.id = new_id
