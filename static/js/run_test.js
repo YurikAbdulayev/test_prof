@@ -299,10 +299,10 @@ function finish() {
             faculty["direction"] + "»!</b></h1>" +
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
-        // if (!aboutYour["body"].empty()) {
-        //     out += aboutYour["body"];
-        // }
-        // alert(faculty["direction"]);
+        if (!aboutYour["body"].empty()) {
+            out += aboutYour["body"];
+        }
+        alert(faculty["direction"]);
         alert(aboutYour);
     } else {
         out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
