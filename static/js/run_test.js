@@ -279,12 +279,14 @@ function finish() {
 
     var out = "";
     var aboutYour = "";
+    alert("check keys ");
     if (keyz["c"][1] != null) {
 
         url = getUrl() + "api/v1.0/dir/" + keyz["c"][1];
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                aboutYour = JSON.parse(xmlhttp.responseText)
+                aboutYour = JSON.parse(xmlhttp.responseText);
+                alert("keys exist");
             }
         };
         xmlhttp.open("GET", url, false);
@@ -292,20 +294,23 @@ function finish() {
 
     }
     if (id == 1) {
+                // alert("it`s id 1");
         out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям <b>«" +
-            aboutYour["full_name"] + "»!</b></h1>" +
+            faculty["direction"] + "»!</b></h1>" +
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
         if (!aboutYour["body"].empty()) {
             out += aboutYour["body"];
         }
+        alert(faculty["direction"]);
+        alert(aboutYour["body"]);
     } else {
         out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
             "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
-        if (!aboutYour["body"].empty()) {
-            out += aboutYour["body"];
-        }
+        // if (!aboutYour["body"].empty()) {
+        //     out += aboutYour["body"];
+        // }
     }
     document.getElementById("content").innerHTML = out;
     deleteStorage()
