@@ -294,17 +294,11 @@ function finish() {
 
     }
     if (id == 1) {
-                // alert("it`s id 1");
         out = "<h1 class='head-text'>Найкраще для тебе підійде освітній напрям <b>«" +
             faculty["direction"] + "»!</b></h1>" +
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
-        // if (!aboutYour["body"].empty()) {
-            out += aboutYour["body"];
-            // out += "Test message";
-        // }
-        // alert(faculty["direction"]);
-        // alert(aboutYour);
+        out += aboutYour["body"];
     } else {
         out = "<h1 class='head-text'>" + faculty["direction"] + "</h1>" +
             "<img src='../static/img/" + keyz["c"][0] + ".jpg' alt='' class='image'>" +
