@@ -301,6 +301,7 @@ function finish() {
             "<p class='result'>";
         // if (!aboutYour["body"].empty()) {
         //     out += aboutYour["body"];
+            out += "Test message";
         // }
         // alert(faculty["direction"]);
         // alert(aboutYour);
