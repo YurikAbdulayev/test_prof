@@ -300,8 +300,8 @@ function finish() {
             "<img src='../static/img/" + keyz["c"][1] + ".jpg' alt='' class='image'>" +
             "<p class='result'>";
         // if (!aboutYour["body"].empty()) {
-        //     out += aboutYour["body"];
-            out += "Test message";
+            out += aboutYour["body"];
+            // out += "Test message";
         // }
         // alert(faculty["direction"]);
         // alert(aboutYour);
